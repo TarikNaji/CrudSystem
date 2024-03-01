@@ -20,4 +20,8 @@ public class TodoService {
         return todoRepository.getTodoList();
     }
 
+    public void addTodoToList(String title, String content) {
+        todoRepository.addTodoToList(title,content);
+    }
+
 }

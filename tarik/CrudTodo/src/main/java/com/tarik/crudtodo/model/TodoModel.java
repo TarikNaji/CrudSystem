@@ -9,6 +9,9 @@ public class TodoModel {
         this.title = title;
         this.content = content;
     }
+    public TodoModel() {
+
+    }
 
     public String getTitle() {
         return title;
