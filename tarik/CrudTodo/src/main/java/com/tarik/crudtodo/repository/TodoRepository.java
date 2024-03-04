@@ -27,6 +27,10 @@ public class TodoRepository {
         todoList.add(todoModel);
     }
 
+    public void deleteTodo(TodoModel todoModel) {
+        todoList.remove(todoModel);
+    }
+
 
 
 }

@@ -24,4 +24,8 @@ public class TodoService {
         todoRepository.addTodoToList(title,content);
     }
 
+    public void deleteTodo(TodoModel todoModel) {
+        todoRepository.deleteTodo(todoModel);
+    }
+
 }
