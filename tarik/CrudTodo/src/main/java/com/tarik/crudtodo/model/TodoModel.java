@@ -34,6 +34,22 @@ public class TodoModel {
         this.content = content;
     }
 
+    public static int getIdCounter() {
+        return idCounter;
+    }
+
+    public static void setIdCounter(int idCounter) {
+        TodoModel.idCounter = idCounter;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String toString() {
         return String.format("Title: %s\nContent: %s",title,content);
     }
