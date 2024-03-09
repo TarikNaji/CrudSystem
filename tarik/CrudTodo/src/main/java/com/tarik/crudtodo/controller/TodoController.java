@@ -4,9 +4,7 @@ import com.tarik.crudtodo.model.TodoModel;
 import com.tarik.crudtodo.service.TodoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,12 +32,13 @@ public class TodoController {
 
     @PostMapping("/save")
     public String add(@ModelAttribute TodoModel todoModel) {
-        String title = todoModel.getTitle();
-        String content = todoModel.getContent();
-        todoService.addTodoToList(title,content);
+        todoService.addTodoToList(todoModel.getTitle(), todoModel.getContent());
         return "redirect:/";
     }
 
-
-
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id) {
+        todoService.deleteTodoById(id);
+        return "redirect:/";
+    }
 }

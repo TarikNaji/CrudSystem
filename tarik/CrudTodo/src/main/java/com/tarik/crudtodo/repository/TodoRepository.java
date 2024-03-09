@@ -6,10 +6,11 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Repository
 public class TodoRepository {
 
-    List<TodoModel> todoList;
+    private final List<TodoModel> todoList;
 
     public TodoRepository() {
         this.todoList = new ArrayList<>();
@@ -17,20 +18,16 @@ public class TodoRepository {
         todoList.add(new TodoModel("Drikke", "Vand"));
     }
 
-    // Returnerer listen med TODO objekter
     public List<TodoModel> getTodoList() {
         return todoList;
     }
 
     public void addTodoToList(String title, String content) {
-        TodoModel todoModel = new TodoModel(title,content);
+        TodoModel todoModel = new TodoModel(title, content);
         todoList.add(todoModel);
     }
 
-    public void deleteTodo(TodoModel todoModel) {
-        todoList.remove(todoModel);
+    public void deleteTodoById(int id) {
+        todoList.removeIf(todo -> todo.getId() == id);
     }
-
-
-
 }

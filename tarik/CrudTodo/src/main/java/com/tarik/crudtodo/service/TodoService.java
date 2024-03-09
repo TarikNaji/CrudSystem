@@ -12,6 +12,7 @@ public class TodoService {
 
     private final TodoRepository todoRepository;
 
+    @Autowired
     public TodoService(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
@@ -21,11 +22,10 @@ public class TodoService {
     }
 
     public void addTodoToList(String title, String content) {
-        todoRepository.addTodoToList(title,content);
+        todoRepository.addTodoToList(title, content);
     }
 
-    public void deleteTodo(TodoModel todoModel) {
-        todoRepository.deleteTodo(todoModel);
+    public void deleteTodoById(int id) {
+        todoRepository.deleteTodoById(id);
     }
-
 }

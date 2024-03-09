@@ -1,7 +1,5 @@
 package com.tarik.crudtodo.model;
 
-import java.util.Random;
-
 public class TodoModel {
 
     private String title;
@@ -9,12 +7,12 @@ public class TodoModel {
     private static int idCounter = 1;
     private int id;
 
-    public TodoModel(String title, String content, int id) {
+    public TodoModel(String title, String content) {
         this.title = title;
         this.content = content;
         this.id = idCounter++;
     }
-    public TodoModel(int id) {
+    public TodoModel() {
         this.id = idCounter++;
     }
 
