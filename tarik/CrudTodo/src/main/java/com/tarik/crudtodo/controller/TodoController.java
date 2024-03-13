@@ -36,9 +36,9 @@ public class TodoController {
         return "redirect:/";
     }
 
-    @GetMapping("/delete/{id}")
-    public String delete(@PathVariable int id) {
-        todoService.deleteTodoById(id);
+    @GetMapping("/delete/{title}")
+    public String delete(@PathVariable String title) {
+        todoService.deleteTodoByTitle(title);
         return "redirect:/";
     }
 }

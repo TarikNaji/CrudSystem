@@ -27,7 +27,16 @@ public class TodoRepository {
         todoList.add(todoModel);
     }
 
-    public void deleteTodoById(int id) {
-        todoList.removeIf(todo -> todo.getId() == id);
+    public void deleteTodoByTitle(String title) {
+        TodoModel todoModel1 = getTodoByTitle(title);
+        todoList.remove(todoModel1);
+    }
+    public TodoModel getTodoByTitle(String title) {
+        for (TodoModel todoModel:todoList) {
+            if (todoModel.getTitle().equalsIgnoreCase(title)) {
+                return todoModel;
+            }
+        }
+        return null;
     }
 }

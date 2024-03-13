@@ -25,7 +25,8 @@ public class TodoService {
         todoRepository.addTodoToList(title, content);
     }
 
-    public void deleteTodoById(int id) {
-        todoRepository.deleteTodoById(id);
+    public void deleteTodoByTitle(String title) {
+        todoRepository.deleteTodoByTitle(title);
     }
+
 }
